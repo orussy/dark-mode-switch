@@ -1,0 +1,131 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color:white;
+  min-height: 100dvh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Poppins", sans-serif;
+  transition: 0.4s ease;
+}
+html {
+  font-size: 62.5%;
+}
+.content {
+  margin: auto;
+}
+.checkbox {
+  width: 200px;
+  height: 60px;
+  position: relative;
+  border-radius: 30px;
+  overflow: hidden;
+}
+.checkbox input[type="checkbox"] {
+  appearance: none;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  z-index: 20;
+}
+.checkbox input[type="checkbox"]:checked + .checkbox-background .sun-moon {
+  transform: translate(-133px, -50%);
+  background-color: white;
+}
+.checkbox
+  input[type="checkbox"]:checked
+  + .checkbox-background
+  .sun-moon::after {
+  opacity: 1;
+}
+.checkbox-background {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+}
+.sun-moon {
+  width: 47px;
+  height: 47px;
+  background-color: gold;
+  border-radius: 50%;
+  transition: all 0.4s ease;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translate(0, -50%);
+  z-index: 2;
+}
+.sun-moon::after {
+  position: absolute;
+  inset: 0;
+  content: "";
+  background-color: black;
+  width: 78%;
+  height: 78%;
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  top: 0;
+  left: -6px;
+}
+.morning,
+.night {
+  position: absolute;
+  inset: 0;
+}
+.morning {
+  background-color: #199ecd;
+  position: absolute;
+}
+.morning::after,
+.morning::before {
+  position: absolute;
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  content: "\f0c2";
+  top: 50%;
+  left: 35%;
+  font-size: 40px;
+  color: white;
+  transform: translate(-50%, -50%);
+}
+.morning::before {
+  left: 20%;
+  top: 60%;
+  font-size: 35px;
+}
+.night {
+  background-color: black;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+.night::after,
+.night::before {
+  position: absolute;
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  content: "\f005";
+  top: 40%;
+  right: 35%;
+  font-size: 17px;
+  color: white;
+  transform: translate(50%, -50%);
+  color:#F2C75E;
+}
+.night::before {
+  right: 20%;
+  top: 60%;
+  font-size: 12px;
+}
+.checkbox input[type="checkbox"]:checked + .checkbox-background .night {
+  opacity: 1;
+}
+.dark{
+
+  background-color:#161618;
+  transition: 0.4s ease;
+}
